@@ -17,15 +17,22 @@ public class Cat {
 	private static final int LEG_Y = HEAD_DIMENSION-15;
 	private static final int LEG_X = HEAD_DIMENSION/4+3;
 	private static final int LEG_SEPARATION = HEAD_DIMENSION/3;
-	// pick eye dimensions
+	// pick leg dimensions
 	private static final int LEG_HEIGHT = 50;
 	private static final int LEG_WIDTH = 15;
+	//nose
+	private static final int NOSE_Y = HEAD_DIMENSION-53;
+	private static final int NOSE_X = HEAD_DIMENSION-55;
+		
+	// pick nose dimensions
+	private static final int NOSE_HEIGHT = 8;
+	private static final int NOSE_WIDTH = 8;
 	// pick mouth height, width is based on head dimension
 	private static final int MOUTH_HEIGHT = 10;
 	private static final int MOUTH_WIDTH = HEAD_DIMENSION/4;
 	// mouth starts about 40% from left edge of head
-	private static final int MOUTH_X = HEAD_DIMENSION/5 * 2;
-	private static final int MOUTH_Y = HEAD_DIMENSION/5 * 3;
+	private static final int MOUTH_X = HEAD_DIMENSION/5 * 2-2;
+	private static final int MOUTH_Y = HEAD_DIMENSION/5 * 3+2;
 	//
 	private static final int EAR_Y1 = HEAD_DIMENSION;
 	private static final int EAR_Y2 = HEAD_DIMENSION/4;
@@ -69,8 +76,14 @@ public class Cat {
 		g2.fillOval(x, y, LEG_WIDTH, LEG_HEIGHT);
 		x += LEG_SEPARATION;
 		g2.fillOval(x, y, LEG_WIDTH, LEG_HEIGHT);
+		//Draw nose
+				g2.setColor(Color.red);
+				x = catX + NOSE_X; 
+				y = catY + NOSE_Y;
+				g2.fillOval(x, y, NOSE_WIDTH, NOSE_HEIGHT);
+				
 		// Draw the mouth
-		g2.setColor(Color.pink);
+		g2.setColor(Color.red);
 		x = catX + MOUTH_X;
 		y = catY + MOUTH_Y;
 		g2.fillOval(x, y, MOUTH_WIDTH, MOUTH_HEIGHT);
